@@ -46,6 +46,8 @@
 //}
 
 
+// this method is applicable for sorted array
+
 #include <iostream>
 //#include <stdio.h>
 using namespace std;
