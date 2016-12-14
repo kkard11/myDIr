@@ -1,3 +1,7 @@
+//  segregate even and odd nodes in a linked list
+// time complexity O(1)
+// space complexity O(1)
+
 #include <iostream>
 
 using namespace std;
