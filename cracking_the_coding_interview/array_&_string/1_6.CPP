@@ -10,7 +10,7 @@ def string_compress(mystr):
         return
     count = 1
     out = ''
-    for i in range(len(mystr)-1):
+    for i in range(len(mystr)-1):  -->to avoid index error so I use len(mystr)-1 instead len(mystr)
         if mystr[i] == mystr[i+1]:
             count = count + 1
         else:
