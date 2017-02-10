@@ -1,25 +1,34 @@
 #include "remove_dup_2_1.h"
-#include <set>
+#include <map>
 #include <iostream>
 
 using namespace std;
 
 
 Node *remove_dup_2_1::remove_duplicate_with_buffer(Node *head) {
-    set<int> myset;
-    set<int>::iterator itr;
-
+    map<int,bool> hashtable;
     Node *temp = head;
-    while (temp) {
-        itr = myset.find(temp->data);
+    hashtable[head->data] = true;  // for the first element
+    Node *dup = NULL;
+    while (temp->next != NULL) {
 
-        if (itr != myset.end()){
-            myset.insert(temp->data);
-        }
-        else {
+        // check the entry
+        if (hashtable[temp->next->data] != true)
+        {
+            hashtable[temp->next->data] = true;
+            //cout << temp->data << " ";
             temp = temp->next;
         }
+
+        // if entry is already there then remove the node
+        else
+        {
+            dup = temp->next;
+            temp->next  = temp->next->next;
+            delete dup;
+        }
     }
+
     return head;
 }
 
