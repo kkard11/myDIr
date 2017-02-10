@@ -6,6 +6,8 @@ using namespace std;
 
 
 Node *remove_dup_2_1::remove_duplicate_with_buffer(Node *head) {
+    if (head == NULL)
+        return NULL;
     map<int,bool> hashtable;
     Node *temp = head;
     hashtable[head->data] = true;  // for the first element
@@ -33,6 +35,8 @@ Node *remove_dup_2_1::remove_duplicate_with_buffer(Node *head) {
 }
 
 Node *remove_dup_2_1::removeDuplicates(Node *head) {
+    if (head == NULL)
+    return NULL;
     Node *temp1, *temp2, *dup;
     temp1 = head;
     while (temp1->next != NULL) {
